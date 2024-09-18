@@ -6,6 +6,7 @@ public class Main {
         Connect4View view = new ConsoleView();
         Connect4Presenter presenter = new Connect4Presenter(model, view);
         presenter.startGame();
+        System.out.println("testgi");
     }
 }
 
