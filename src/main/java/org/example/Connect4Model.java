@@ -1,5 +1,9 @@
 package org.example;
 
+/**
+ * Model class for Connect 4 game, representing the game board and the game logic.
+ */
+
 public class Connect4Model {
     private static final int rows = 6;
     private static final int cols = 7;
@@ -10,6 +14,9 @@ public class Connect4Model {
     private int[][] board = new int[rows][cols];
     private int currentPlayer = red;
 
+    /**
+     * Initializes the Connect 4 board with empty cells and sets the first player to red.
+     */
     public Connect4Model() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -18,10 +25,21 @@ public class Connect4Model {
         }
     }
 
+    /**
+     * Gets the current player.
+     *
+     * @return the current player (1 for red, 2 for yellow).
+     */
     public int getCurrentPlayer() {
         return currentPlayer;
     }
 
+    /**
+     * Drops a disc for the current player in the specified column.
+     *
+     * @param col the column number where the disc should be dropped.
+     * @return true if the disc is successfully dropped, false if the column is full or invalid.
+     */
     public boolean dropDisc(int col) {
         if (col < 0 || col >= cols || board[0][col] != empty) {
             return false;
@@ -35,6 +53,11 @@ public class Connect4Model {
         return false;
     }
 
+    /**
+     * Checks if the current player has won the game.
+     *
+     * @return true if the current player has a winning line, false otherwise.
+     */
     public boolean checkForWin() {
         return checkLines() || checkDiagonals();
     }
@@ -89,10 +112,18 @@ public class Connect4Model {
         return false;
     }
 
+    /**
+     * Switches the turn to the other player.
+     */
     public void switchPlayer() {
         currentPlayer = (currentPlayer == red) ? yellow : red;
-    }
+    } // ternary operator
 
+    /**
+     * Gets the current state of the game board.
+     *
+     * @return a 2D array representing the game board.
+     */
     public int[][] getBoard() {
         return board;
     }
