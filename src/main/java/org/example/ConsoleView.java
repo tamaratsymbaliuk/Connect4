@@ -25,9 +25,10 @@ public class ConsoleView implements Connect4View {
                 }
                 System.out.print("|" + display);
             }
-            System.out.println("|");
+              System.out.println("|");
         }
-        for (int i = 0; i < board[0].length; i++) {
+        // Print column numbers from 1 to 7
+        for (int i = 1; i <= board[0].length; i++) {
             System.out.print(" " + i + " ");
         }
         System.out.println();
