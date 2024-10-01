@@ -41,10 +41,10 @@ public class Connect4Model {
      * @return true if the disc is successfully dropped, false if the column is full or invalid.
      */
     public boolean dropDisc(int col) {
-        if (col < 0 || col >= cols || board[0][col] != empty) {
+        if (col < 0 || col >= cols || board[0][col] != empty) { // checking if the top row is occupied
             return false;
         }
-        for (int row = rows - 1; row >= 0; row--) {
+        for (int row = rows - 1; row >= 0; row--) { // starting at the bottom
             if (board[row][col] == empty) {
                 board[row][col] = currentPlayer;
                 return true;
@@ -65,7 +65,7 @@ public class Connect4Model {
     private boolean checkLines() {
         // Check horizontal and vertical
         for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols - 3; col++) {
+            for (int col = 0; col < cols - 3; col++) { // excluding the last 3 columns as it wouldn’t allow enough space for a horizontal win
                 if (board[row][col] == currentPlayer &&
                         board[row][col] == board[row][col + 1] &&
                         board[row][col] == board[row][col + 2] &&
@@ -75,7 +75,7 @@ public class Connect4Model {
             }
         }
         for (int col = 0; col < cols; col++) {
-            for (int row = 0; row < rows - 3; row++) {
+            for (int row = 0; row < rows - 3; row++) { // // excluding the last 3 rows as it wouldn’t allow enough space for a horizontal win
                 if (board[row][col] == currentPlayer &&
                         board[row][col] == board[row + 1][col] &&
                         board[row][col] == board[row + 2][col] &&
