@@ -1,4 +1,4 @@
-package org.example;
+package version1;
 
 /**
  * Main class for running the Connect 4 game.
@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         Connect4Model model = new Connect4Model();
         Connect4View view = new ConsoleView();
-        Connect4Presenter presenter = new Connect4Presenter(model, view, false);
+        Connect4Presenter presenter = new Connect4Presenter(model, view, true);
         //presenter.startGameHuman();
         presenter.startGameComputer();
 

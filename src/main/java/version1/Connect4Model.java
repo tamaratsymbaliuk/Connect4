@@ -1,4 +1,4 @@
-package org.example;
+package version1;
 
 /**
  * Model class for Connect 4 game, representing the game board and the game logic.
