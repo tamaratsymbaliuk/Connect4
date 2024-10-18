@@ -1,4 +1,4 @@
-package org.example;
+package version1;
 
 /**
  * Interface for the view in the Connect 4 game, defining how the user interacts with the game.
